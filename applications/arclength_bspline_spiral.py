@@ -36,7 +36,7 @@ t = linspace(0,1,n_ls)
 F = array([cx(t), cy(t), cz(t)])
 
 # Least square matrix
-M = InterpolationMatrix(vs, t)
+M = interpolation_matrix(vs, t)
 
 # Control points and curve
 CP = lstsq(M, F.T)[0]

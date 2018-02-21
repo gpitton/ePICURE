@@ -20,6 +20,7 @@ class BsplineVectorSpace(VectorSpace):
         else:
             assert knots[0] != knots[-1]
             self.knots = knots
+            self.degree = len(np.where(knots == knots[0]))
         self.cells = np.unique(self.knots)
         self.n_knots = len(self.knots)
         self.mults = self.compute_mults(self.knots)
