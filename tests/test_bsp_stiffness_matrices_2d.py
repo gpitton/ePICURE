@@ -79,6 +79,7 @@ def test_h_refinement():
 
     c1 = line([R1, 0], [R2, 0])
     srf = revolve(c1, point = [0, 0], axis = 2, angle = [0, np.pi/2.])
+
     for el_x in range(1, 6):
         for el_y in range(1, 6):
             refined_surface = refine(srf.copy(), factor = (el_x, el_y))
@@ -92,7 +93,8 @@ def test_p_refinement():
 
     c1 = line([R1, 0], [R2, 0])
     srf = revolve(c1, point = [0, 0], axis = 2, angle = [0, np.pi/2.])
-    for px in range(8):
-        for py in range(8):
+
+    for px in range(1,8):
+        for py in range(1,8):
             refined_surface = refine(srf.copy(), degree = (px, py))
             compare_stiffness_2d(refined_surface)

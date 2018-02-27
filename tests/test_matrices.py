@@ -30,5 +30,3 @@ def test_stiffness_matrix():
                 csc = stiffness_matrix(vs, k, matrix_format = "CSC")
                 csr = stiffness_matrix(vs, k, matrix_format = "CSR")
                 assert (t == csc).all() and (t == csr).all()
-
-#test_mass_matrix()
